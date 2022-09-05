@@ -1,20 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Simple Bot to reply to Telegram messages
-# This program is dedicated to the public domain under the CC0 license.
-"""
-This Bot uses the Updater clast to handle the bot.
-
-First, a few handler functions are defined. Then, those functions are pasted to
-the Dispatcher and registered at their respective places.
-Then, the bot is started and runs until we press Ctrl-C on the command line.
-
-Usage:
-Basic Echobot example, repeats messages.
-Press Ctrl-C on the command line or send a signal to the process to stop the
-bot.
-"""
+# Простой телеграм бот для парсинга вакансий
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
 import logging
@@ -22,7 +9,7 @@ import telegram
 import parsing
 # import searchmod
 
-TOKEN = '5305305560:AAGQynMTfAWsLfCWDTlUSDDDEL1JQwqpFUk'
+TOKEN = 'your_token'
 bot = telegram.Bot(token=TOKEN)
 
 # Enable logging
