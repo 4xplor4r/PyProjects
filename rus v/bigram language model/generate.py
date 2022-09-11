@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # python v 3.10.2
 '''Универсальный скрипт, использующий train.py, для
-обучения моделей, их кодирования и декодирования в формате ".pkl". 
-Для получиния случайной последовательности достаточно написать 
+обучения моделей, их кодирования и декодирования в формате ".pkl".
+Для получиния случайной последовательности достаточно написать
 "python length_of_sequence --prefix some_word --path ./your_model.pkl" '''
-from sys import stdin
+# from sys import stdin
 from random import choice
 import argparse
 import pickle
@@ -20,7 +20,7 @@ class Creation():
         '''Создается последовательность'''
         sequence = ''
 
-        for _ in range(length): 
+        for _ in range(length):
             '''Если подходящее слово находится в словаре, 
             случайно выбирается связанная с ним лексическая еденица'''
             try:
@@ -62,7 +62,10 @@ def parse1():
         # распаковка модели
         with open('model.pkl', 'rb') as f:
             model = pickle.load(f)
-
+    
+    '''
+    К сожалению логика кода мешает правильному выполнению этого участка
+    
     # если пользователь обучает модель
     elif args.learn:
         # если аргументы не найдены, данные поступают из потокового ввода
@@ -72,10 +75,11 @@ def parse1():
             text = ''.join([line for line in stdin])
         # модель обучается
         model = Education(text).learn()
-
+    '''
+    
     # инициализация общих параметров
     length = args.length
-    if args.prefix: 
+    if args.prefix:
         prefix = args.prefix
     else:
         prefix = ''
@@ -85,6 +89,5 @@ def parse1():
 
 # составляется последовательность
 value = parse1()
-from train import Education
 sequence = Creation(value[0])
 print(sequence.generate(value[1], value[2]))
