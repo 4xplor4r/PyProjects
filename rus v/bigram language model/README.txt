@@ -38,8 +38,8 @@
 
 Для генерации последовательности необходимо написать в терминале указание интерпритатору прочитать и 
 исполнить файл, по истинному пути, так же обязательно указать длинну последовательности ,и 
-обязательно использовать аргумент "--path your_file.txt":
->python c:/.../generate.py length_of_sequence --path your_file.txt
+обязательно использовать аргумент "--path your_file.pkl":
+>python c:/.../generate.py length_of_sequence --path your_file.pkl
 
 Была задуманна возможность обучить модель на стадии генерации, указать необязательный аргумент через `argparse`.
 Этим аргументом должен был стать "--learn", который через класс Education, доджен был обучить новую модель. 
@@ -48,4 +48,4 @@
 за результатом к каждому из исполняющих файлов.
 
 Так же можно добавить префикс к генерируемой последовательности.
->python c:/.../generate.py length_of_sequence --path your_file.txt --prefix your_prefix
+>python c:/.../generate.py length_of_sequence --path your_file.pkl --prefix your_prefix
